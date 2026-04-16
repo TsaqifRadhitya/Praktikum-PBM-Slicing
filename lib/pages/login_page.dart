@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slicing/pages/main_page.dart';
+import 'package:slicing/pages/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -39,6 +42,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        actionsIconTheme: IconThemeData(color: Colors.white),
+        foregroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -170,7 +178,14 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: _isButtonEnabled ? () {} : null,
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => const MainPage(),
+                          ),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: _isButtonEnabled
                             ? Color(0xFF0095F6)
@@ -214,7 +229,14 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 30),
                   TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => const MainPage(),
+                        ),
+                      );
+                    },
                     icon: Icon(
                       Icons.facebook,
                       color: Color(0xFF1877F2),
@@ -249,7 +271,14 @@ class _LoginPageState extends State<LoginPage> {
               style: TextStyle(color: Colors.grey[600], fontSize: 14),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) => const RegisterPage(),
+                  ),
+                );
+              },
               child: Text(
                 "Sign up.",
                 style: TextStyle(

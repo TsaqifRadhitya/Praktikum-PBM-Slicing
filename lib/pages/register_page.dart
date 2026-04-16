@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slicing/pages/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -19,6 +21,11 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        actionsIconTheme: IconThemeData(color: Colors.white),
+        foregroundColor: Colors.white,
+      ),
       backgroundColor: igBackground,
       bottomNavigationBar: SafeArea(
         child: Container(
@@ -36,7 +43,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 style: TextStyle(color: igTextHint, fontSize: 12),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  CupertinoPageRoute(builder: (context) => const LoginPage()),
+                ),
                 child: const Text(
                   'Log in.',
                   style: TextStyle(
