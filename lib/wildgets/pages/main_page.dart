@@ -14,7 +14,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPage extends State<MainPage> {
-  int activeIndexStack = 1;
+  int activeIndexStack = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _MainPage extends State<MainPage> {
         index: activeIndexStack,
         children: [
           const HomeScreen(),
-          ReelsScreen(),
+          const ReelsScreen(),
           const MessageScreen(),
           const ExploreScreen(),
           const ProfileScreen(),
