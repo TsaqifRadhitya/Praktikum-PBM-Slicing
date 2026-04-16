@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slicing/wildgets/pages/main_page.dart';
+import 'package:slicing/wildgets/pages/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.blue)),
-      home: MainPage(),
+      home: RegisterPage(),
     );
   }
 }
